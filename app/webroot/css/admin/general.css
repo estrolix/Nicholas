@@ -1,0 +1,226 @@
+.noitems {
+    text-align: center;
+    font-style: italic;
+    color: gray;
+}
+
+.empty_answer {
+    font-style: italic;
+    color: gray;
+}
+
+.actions_box h3 {
+    margin: 0 0 10px;
+}
+
+
+#similarChildrenBox {
+    background-color: #EAF7D9;
+    border: 2px solid #BBDF8D;
+    padding: 10px;
+    display: none;
+    margin-bottom: 10px;
+}
+
+    #similarChildrenBox .supertitle {
+        margin-bottom: 15px;
+        margin-top: 0;
+        font-size: 140%;
+    }
+    
+    #similarChildrenBox .title {
+        margin: 15px 0 5px;
+        font-size: 120%;
+    }
+    
+    #similarChildrenBox td {
+        background: white;
+    }
+
+#similarChildrenLoader {
+    display: none;
+}
+
+#similarChildrenLoader .loader {
+    padding: 0 5px;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.repeat_search {
+    margin: 0 0 10px !important;
+}
+    .repeat_search a {
+        text-decoration: none;
+        border-bottom: 1px dashed;
+    }
+
+tr.deleted_first td {
+    background-color: #FEEBEB !important;
+    border: 0 !important;
+    border-top: 2px solid #FFAEAE !important;
+}
+    
+tr.deleted_second td {
+    background-color: #FEEBEB !important;
+    border: 0 !important;
+    border-bottom: 2px solid #FFAEAE !important;
+}
+
+#childDeleteSelectReasonBox {
+    background-color: #FEEBEB !important;
+    border: 2px solid #FFAEAE !important;
+    display: none;
+}
+
+div#childDeleteSelectReasonBox {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+#childDeleteSelectReasonBox label {
+    font-weight: bold;
+}
+
+.page_children .child_name, .page_volunteers .name {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.child_deleted_box {
+    background-color: #FEEBEB;
+    border: 2px solid #FFAEAE;
+    padding: 15px;
+}
+
+/* children search form */
+
+#childrenSearch {
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #BBBBBB;
+    float: left;
+    margin: 30px 0 15px;
+}
+
+#childrenSearch .search_btn {
+	cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#childrenSearch .input-text {
+    border: 1px solid #AAAAAA;
+    border-radius: 5px;
+}
+
+#SearchIndexForm {
+	margin-top: 10px;
+	display: none;
+}
+
+	#SearchIndexForm > div > label {
+		font-weight: bold;
+		font-size: 14px;
+	}
+
+	#SearchIndexForm .input {
+		margin-bottom: 10px;
+	}
+
+	#children_age_range {
+		margin: 0 0 5px;
+	}
+
+		#children_age_range span {
+			font-weight: bold;
+		}
+
+	#slider-age-range {
+		width: 100%;
+		z-index: 1;
+	}
+
+	#SearchIndexForm .submit input {
+		padding: 5px 7px;
+		margin-top: 5px;
+		border-radius: 10px;
+		border: 1px solid #bbb;
+		cursor: pointer;
+	}
+    
+    /* fixing autosuggest conflicts with adminizio default styles */
+    
+    #childrenSearch ul li {
+        padding-left: 0;
+        background: none;
+    }
+
+    #childrenSearch ul li.token-input-token-facebook {
+        background-color: #EFF2F7;
+        padding: 2px 4px;
+        background: url("../../img/admin/tray.gif") repeat-x;
+        color: white;
+        border: 0; 
+    }
+    
+    #childrenSearch ul.token-input-list-facebook {
+        border: 1px solid #AAAAAA;
+        border-radius: 5px;
+        width: 238px;
+        margin: 5px 0 0; 
+    }
+    
+    .token-input-dropdown-facebook {
+        width: 300px !important;
+        border: 1px solid #AAAAAA;
+        border-radius: 5px;
+        box-shadow: 1px 3px 5px #888;
+    }
+    
+    div.token-input-dropdown-facebook p {
+        font-family: Arial;
+        box-shadow: 2px 5px 5px gray;
+    }
+    
+    .token-input-delete-token-facebook {
+        color: white !important;
+    }
+
+/* end children search form */
+
+.search_items_count {
+	margin: 25px 0 0 !important;
+	font-style: italic;
+	color: #777;
+}
+
+	.search_items_count span {
+		font-weight: bold;
+		color: #000;
+	}
+
+#childViewMainDiv {
+    float: left;
+}
+    
+.childViewMap {
+    float: right;
+    width: 500px;
+    height: 420px;
+    margin: 20px 0 20px 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px gray;
+}
+
+.page_streets .street_title, .street_view_childrenlist_title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.streetViewMap {
+    width: 100%;
+    height: 350px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 1px 1px 8px gray;
+}

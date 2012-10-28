@@ -1,0 +1,20 @@
+/* WRITE YOUR CSS CODE HERE */
+div#flashMessage,
+div.message{
+    border: 2px solid #B8E2FB;
+    background: #E8F6FF url("../../img/admin/ico-info.gif") no-repeat scroll 10px 50%;
+    padding: 10px 10px 10px 35px;
+    margin: 15px 0;
+}
+table th a {
+    color: #ffffff;
+}
+#content .pagination .f-right span.current{
+    background: #DF0000;
+    color: #ffffff;
+    padding: 2px 4px;
+}
+table.nostyle div.error-message{
+    color: #DF0000;
+    padding-bottom: 5px;
+}

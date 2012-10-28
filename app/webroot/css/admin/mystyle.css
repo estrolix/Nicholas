@@ -1,0 +1,320 @@
+/* WRITE YOUR CSS CODE HERE */
+#main{
+    /*min-width: 1450px;*/
+}
+
+.clear_both{
+    clear: both;
+    height: 1px;
+    padding: 0;
+    margin: 0;
+    font-size: 1px;
+}
+
+div#flashMessage,
+div.message{
+    border: 2px solid #B8E2FB;
+    background: #E8F6FF url("../../img/admin/ico-info.gif") no-repeat scroll 10px 50%;
+    padding: 10px 10px 10px 35px;
+    margin: 15px 0;
+}
+table th a {
+    color: #ffffff;
+}
+#content .pagination .f-right span.current{
+    background: #DF0000;
+    color: #ffffff;
+    padding: 2px 4px;
+}
+table.nostyle div.error-message{
+    color: #DF0000;
+    padding-bottom: 5px;
+}
+#UserLoginForm input.input-text {
+    width: 300px;
+}
+#UserRecoverPasswordForm #UserUsername{
+    width: 340px;
+}
+
+label.requaired{
+    font-weight: bold;
+}
+
+/*multiselect custom*/
+.multiselect_hidden_part{
+    display: none;
+}
+/*multiselect custom*/
+
+tr.hidden_habtm{
+    display: none;
+}
+
+
+/* search_filters */
+.search_filters_btns{
+    text-align: right;
+    float: right;
+}
+.search_filters_fields{
+    
+}
+.search_filters_field_container{
+    padding-top: 7px;
+    white-space: nowrap;
+    float: left;
+}
+
+/* /search_filters */
+
+
+#recover_password_in_login_form{
+    display: block;
+    float: right;
+}
+
+/* WRITE YOUR CSS CODE HERE */   
+
+.pointer {
+    cursor: pointer;
+}
+
+/* accordion */
+
+.accordion-title {
+    background: url("../../img/admin/menu.gif") repeat-x;
+    padding: 10px 15px;
+    box-shadow: 0 1px 3px gray;
+    border-radius: 5px;
+    color: white;
+    font-size: large;
+    cursor: pointer;
+    margin: 0 0 10px;
+}
+
+.accordion-arrow {
+	float: left;
+	height: 16px;
+	width: 16px;
+	display: block;
+	margin: 5px 5px 0 3px;
+}
+
+.accordion-arrow-opened {
+	background: url("../../img/bullet_arrow_down.png") no-repeat scroll left center;
+	cursor: pointer;
+}
+
+.accordion-arrow-closed {
+	background: url("../../img/bullet_arrow_right.png") no-repeat scroll left center;
+	cursor: pointer;
+}
+
+/* */
+
+
+/* left menu */
+
+.menu-title {
+	width:198px;
+	border:0;
+	background: url("../../img/admin/menu.gif") repeat-x scroll 0 0 transparent;
+	font-weight:bold;
+	z-index:100;
+	color:#fff;
+	padding: 4px 20px 4px 10px;
+	margin-bottom: 4px;
+	cursor: pointer;
+	box-shadow: 0 1px 3px gray;
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px; /* 40px for more extravagant view */
+}
+
+#aside ul ul {
+	display: none;
+}
+
+#aside .menu-arrow {
+	float: left;
+	height: 16px;
+	width:16px;
+	display: block;
+	margin: 5px 1px 0 7px;
+}
+
+#aside .menu-arrow-opened {
+	background: url("../../img/bullet_arrow_down.png") no-repeat scroll left center;
+	cursor: pointer;
+}
+
+#aside .menu-arrow-closed {
+	background: url("../../img/bullet_arrow_right.png") no-repeat scroll left center;
+	cursor: pointer;
+}
+
+/* end left menu */
+
+div.image img {
+	width: 136px;
+	height:136px;
+}
+
+td.show {
+	width: 20px;
+	text-align: center;
+}
+
+.blocks-search form {
+	display: block;
+}
+
+div.search {
+	margin: 3px 0;
+}
+	.search label {
+		font-size: 12px;
+	}
+
+h2.search {
+	margin-top: 0px;
+	font-size: 130% !important;
+	color: #0085CC;
+	font-weight: bold;
+	margin: 7px 0;
+}
+
+p.hiding {
+	margin: 5px 0;
+}
+
+.gray {
+	color: gray;
+}
+
+.page_volunteers dd a:hover {
+	color: #0085CC;
+}
+
+.dualSelect td{
+	vertical-align: middle;
+}
+
+.dualSelect button {
+	padding: 0 0 2px 0;
+}
+
+.dualSelect select {
+	padding: 5px;
+	height: 400px;
+	width: 300px;	
+}
+
+.dualSelect .countLabel {
+	display: block;
+	margin-top: 4px;
+	font-style: italic;
+}
+
+.dualSelect .filterClearButton {
+
+}
+
+.currentActionSelector .actionName {
+	font-weight: bold;
+}
+
+.currentActionSelector .buttons .change,
+.currentActionSelector .buttons .save,
+.currentActionSelector .buttons .cancel{
+	text-decoration: none;
+	border-bottom: 1px dotted;
+	cursor: pointer;
+	color: #0085CC;
+}
+
+.currentActionSelector #SettingActionId, 
+.currentActionSelector .saveSet {
+	display: none;
+}
+
+
+/* css for timepicker */
+.ui-timepicker-div .ui-widget-header{ margin-bottom: 8px; }
+.ui-timepicker-div dl{ text-align: left; }
+.ui-timepicker-div dl dt{ height: 25px; }
+.ui-timepicker-div dl dd{ margin: -25px 0 10px 65px; }
+.ui-timepicker-div td { font-size: 90%; }
+/* --- */
+
+form .required label {
+    font-weight: bold;
+}
+form .required label:after {
+    content: '*';
+    color: red;
+}
+
+.tablelist {
+	width: 100%;
+	margin: 10px 0;
+}
+
+li.template {
+     display: none;
+}
+
+.message { /* same as 'msg info' */
+    border: 2px solid #B8E2FB;
+    background: url("../../img/admin/ico-info.gif") no-repeat scroll 10px 50% transparent;
+    background-color: #E8F6FF;
+    padding: 10px 10px 10px 35px;
+	 margin: 10px 0;
+}
+
+.error-message {
+    border: 2px solid #FFAEAE;
+    background: url("../../img/admin/ico-delete.gif") no-repeat scroll 5px 50% transparent;
+    background-color: #FEEBEB;
+    padding: 5px 10px 5px 30px;
+    margin-bottom: 5px;
+}
+
+
+/* fixing ui tabs */
+.ui-widget-header {
+    background:  transparent !important;
+    border: 0 !important;
+    list-style-type: none !important;
+} 
+
+.ui-widget-header li {
+    background:  transparent !important;
+}
+
+.ui-tabs-nav li a {
+    /*padding: 0.5em;*/
+}
+	 
+/* tables */
+#content table th a {
+	color: white;
+	text-decoration: none;
+	border-bottom: 1px dotted white;
+}
+
+
+.paginatorBlock {
+	width: 100%;
+	text-align: center;
+	clear: both;
+	padding-top: 3px;
+}
+
+.hidden {
+	display: none;
+}
+
+#emptyTeamError, #teamLeaderError {
+	display: none;
+}
