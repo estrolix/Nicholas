@@ -13,3 +13,6 @@ function isValueInArray(arr, val) {
 function get_val_from_string(string, prefix){
     return string.substr(prefix.length);
 }
+function getRandomInt(from, to){
+   return Math.floor(Math.random() * (to - from + 1) + from);
+}

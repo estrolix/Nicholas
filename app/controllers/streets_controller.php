@@ -8,27 +8,36 @@ class StreetsController extends AppController {
 		$this->set('streets', $this->paginate());
 	}
 
-	function view($id = null) {
+	function view($id = null)
+	{
 		if (!$id) {
 			$this->Session->setFlash(__('Неправильний ID вулиці', true), 'flash_error');
 			$this->redirect(array('action' => 'index'));
 		}
 
+		$this->loadModel('Child');
+		$this->loadModel('DeleteReason');
+
+		//$this->Child->contain(array('Category', 'Street', 'Source'));
+		//$children = $this->Child->find('all', array('conditions' => array('Child.street_id' => $id, 'Child.is_deleted' => 0), 'order' => 'Child.first_name ASC'));
+
 		$this->paginate['Child'] = array(
-	        'order' => 'Child.id DESC',
-	        'limit' => 20,
+	        'order' => 'Child.first_name ASC',
+	        'limit' => 100,
 	        'contain' => array('Category', 'Street', 'Source'),
 	        'conditions' => array('is_deleted' => 0, 'street_id' => $id)
 	    );
 
-	    $this->loadModel('DeleteReason');
+	    $children = $this->paginate('Child');
+		$childrenJSON = json_encode($this->Child->find('all', array('conditions' => array('Child.street_id' => $id, 'Child.is_deleted' => 0))));
+		$street = $this->Street->read(null, $id);
+		$deleteReasons = $this->DeleteReason->find('list');
 
-		$this->set('street', $this->Street->read(null, $id));
-		$this->set('children', $this->paginate('Child'));
-		$this->set('deleteReasons', $this->DeleteReason->find('list'));
+		$this->set(compact('children', 'childrenJSON', 'street', 'deleteReasons'));
 	}
 
-	function add() {
+	function add()
+	{
 		if (!empty($this->data)) {
 			$this->Street->create();
 			if ($this->Street->save($this->data)) {
@@ -40,7 +49,8 @@ class StreetsController extends AppController {
 		}
 	}
 
-	function edit($id = null) {
+	function edit($id = null)
+	{
 		if (!$id && empty($this->data)) {
 			$this->Session->setFlash(__('Неправильний ID вулиці', true), 'flash_error');
 			$this->redirect(array('action' => 'index'));
@@ -58,7 +68,8 @@ class StreetsController extends AppController {
 		}
 	}
 
-	function delete($id = null) {
+	function delete($id = null)
+	{
 		if (!$id) {
 			$this->Session->setFlash(__('Неправильний ID вулиці', true), 'flash_error');
 			$this->redirect(array('action'=>'index'));

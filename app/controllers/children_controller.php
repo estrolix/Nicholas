@@ -5,7 +5,7 @@ class ChildrenController extends AppController {
     
     var $paginate = array(
         'order' => 'Child.id DESC',
-        'limit' => 10,
+        'limit' => 20,
         'contain' => array('Category', 'Street', 'Source'),
         'conditions' => array('is_deleted' => 0)
     );
@@ -249,13 +249,11 @@ class ChildrenController extends AppController {
                                 'birthday' => array('title' => 'За датою народження', 'children' => null)
                                 );
                                 
-        
-        if(!empty($this->data['Child']['first_name'])) {
             $this->Child->contain(array('Category', 'Street', 'Source', 'DeleteReason'));
-            $childrenGroups['name']['children'] = $this->Child->find('all', array('conditions' => array('Child.first_name LIKE' => "%{$this->data['Child']['first_name']}%"), 'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));    
-        }    
         
-        $this->Child->contain(array('Category', 'Street', 'Source', 'DeleteReason'));
+        if(!empty($this->data['Child']['first_name']))
+            $childrenGroups['name']['children'] = $this->Child->find('all', array('conditions' => array('Child.first_name LIKE' => "%{$this->data['Child']['first_name']}%"), 'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));    
+        
         $childrenGroups['address']['children'] = $this->Child->find('all', array('conditions' => array('Child.street_id' => $this->data['Child']['street_id'],
                                                                                                 'Child.house' => $this->data['Child']['house'],
                                                                                                 'OR' => array(
@@ -266,9 +264,7 @@ class ChildrenController extends AppController {
                                                                                 'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')
                                                                     ));
                                                                                                 
-        $this->Child->contain(array('Category', 'Street', 'Source', 'DeleteReason'));
-        $childrenGroups['birthday']['children'] = $this->Child->find('all', array('conditions' => array('Child.birthday' => $this->data['Child']['birthday']['year'] . '-' . $this->data['Child']['birthday']['month'] . '-' . $this->data['Child']['birthday']['day']),
-            'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));
+        $childrenGroups['birthday']['children'] = $this->Child->find('all', array('conditions' => array('Child.birthday' => $this->data['Child']['birthday']), 'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));
         
         if(!$childrenGroups['name']['children'] && !$childrenGroups['address']['children'] && !$childrenGroups['birthday']['children']) {
             exit('success');
@@ -278,4 +274,16 @@ class ChildrenController extends AppController {
         
         $this->render('../elements/similarChildren');   
     }
+
+    function all()
+    {
+        $this->Child->contain('Street');
+
+        $children = $this->Child->find('all', array('conditions' => array('Child.is_deleted' => 0)));
+        $childrenJSON = json_encode($children);
+
+        $this->set('children', $children);
+        $this->set('childrenJSON', $childrenJSON);
+    }
+
 }
