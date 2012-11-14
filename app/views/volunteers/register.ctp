@@ -1,8 +1,7 @@
 <div class="jumbotron">
 	<h1>Миколай про тебе не забуде 2012</h1>
 	<p class="lead">
-		Якщо Ви маєте мету стати волонтером даного проекту - заповніть цю анкету.
-		В найближчий час наші координатори зв'яжуться з Вами.
+		Хочеш стати волонтером даного проекту? Зареєструйся і в найближчий час наші координатори зв'яжуться з тобою.
 	</p>
 	<a class="btn btn-large btn-success" href="#">Зареєструватись!</a>
 </div>
@@ -16,17 +15,16 @@
 	<?php echo $this->Form->input('last_name', array('label' => 'Прізвище')); ?>
 	<?php echo $this->Form->input('third_name', array('label' => 'По-батькові')); ?>
 
-	<?php echo $this->Form->input('sex', array('label' => 'Стать')); ?>
+	<?php echo $this->Form->label('gender', 'Стать'); ?>
+	<?php echo $this->Form->input('gender', array('type' => 'radio', 'options' => $genders, 'legend' => false)); ?>
 	<?php echo $this->Form->input('birthday', array('label' => 'Дата народження')); ?>
 
 	<?php echo $this->Form->input('email', array('label' => 'E-mail')); ?>
 	<?php echo $this->Form->input('phone', array('label' => 'Номер телефону')); ?>
 
 	<?php echo $this->Form->input('social_links', array(
-		'label' => 'Посилання на сторінки в соц. мережах (Вконтакті, Facebook, Twitter',
-		'rows' => 5,
-		'after' => '<span class="help-block">Якщо у вас така сторінка відсутня, друкуєте слово "немає" Якщо ви маєте не одну сторінку, прохання розмістити усі посилання.</span>'
-		)); ?>
+		'label' => 'Посилання на сторінки в соціальних мережах (Вконтакті, Facebook, Twitter і т.д.)'
+	)); ?>
 
 
 	<?php echo $this->Form->end(); ?>

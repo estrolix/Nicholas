@@ -9,6 +9,8 @@ class VolunteersController extends AppController
         'contain' => array('Street')
     );
 
+    public $genders = array('m' => 'чоловіча', 'f' => 'жіноча');
+
 	public function index()
     {
         $volunteers = $this->paginate();
@@ -105,6 +107,7 @@ class VolunteersController extends AppController
 				$this->Session->setFlash(__('Помилка збереження. Перевірте правильність введених даних.', true), 'flash_warning');
 			}
 		}
+		$this->set('genders', $this->genders);
 	}
 
 }
