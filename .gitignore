@@ -1,3 +1,6 @@
+app/config/database.php
+
+
 #################
 ## Eclipse
 #################
@@ -161,3 +164,6 @@ pip-log.txt
 
 # Mac crap
 .DS_Store
+
+
+

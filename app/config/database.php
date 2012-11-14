@@ -6,8 +6,7 @@ class DATABASE_CONFIG {
 		'persistent' => false,
 		'host' => 'localhost',
 		'login' => 'root',
-		'password' => 'root',
-		'database' => 'nicholas',
+		'password' => 'control1system',
+		'database' => 'nikolaos',
 	);
 }
-?>
