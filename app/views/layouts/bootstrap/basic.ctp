@@ -67,20 +67,7 @@
 
 		<hr>
 
-		<div class="jumbotron">
-			<h1>Миколай про тебе не забуде 2012</h1>
-			<p class="lead">
-				Якщо Ви маєте мету стати волонтером даного проекту - заповніть цю анкету.
-				В найближчий час наші координатори зв'яжуться з Вами.
-			</p>
-			<a class="btn btn-large btn-success" href="#">Зареєструватись!</a>
-		</div>
-
-		<hr>
-
-		<div class="row-fluid">
-			123
-		</div>
+		<?php echo $content_for_layout; ?>
 
 		<hr>
 
