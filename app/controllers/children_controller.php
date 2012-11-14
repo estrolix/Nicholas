@@ -249,11 +249,14 @@ class ChildrenController extends AppController {
                                 'birthday' => array('title' => 'За датою народження', 'children' => null)
                                 );
                                 
-            $this->Child->contain(array('Category', 'Street', 'Source', 'DeleteReason'));
+        $this->Child->contain(array('Category', 'Street', 'Source', 'DeleteReason'));
         
         if(!empty($this->data['Child']['first_name']))
-            $childrenGroups['name']['children'] = $this->Child->find('all', array('conditions' => array('Child.first_name LIKE' => "%{$this->data['Child']['first_name']}%"), 'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));    
+            $childrenGroups['name']['children'] = $this->Child->find('all', array(
+                'conditions' => array('Child.first_name LIKE' => "%{$this->data['Child']['first_name']}%"),
+                'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));    
         
+        $this->Child->contain(array('Category', 'Street', 'Source', 'DeleteReason'));
         $childrenGroups['address']['children'] = $this->Child->find('all', array('conditions' => array('Child.street_id' => $this->data['Child']['street_id'],
                                                                                                 'Child.house' => $this->data['Child']['house'],
                                                                                                 'OR' => array(
@@ -264,7 +267,11 @@ class ChildrenController extends AppController {
                                                                                 'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')
                                                                     ));
                                                                                                 
-        $childrenGroups['birthday']['children'] = $this->Child->find('all', array('conditions' => array('Child.birthday' => $this->data['Child']['birthday']), 'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));
+        $this->Child->contain(array('Category', 'Street', 'Source', 'DeleteReason'));
+        $childrenGroups['birthday']['children'] =
+            $this->Child->find('all', array(
+                'conditions' => array('Child.birthday' => $this->data['Child']['birthday']),
+                'order' => array('Child.first_name', 'Child.last_name', 'Child.third_name')));
         
         if(!$childrenGroups['name']['children'] && !$childrenGroups['address']['children'] && !$childrenGroups['birthday']['children']) {
             exit('success');

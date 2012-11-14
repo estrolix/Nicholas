@@ -1,15 +1,15 @@
 <?php
-class VolunteersController extends AppController {
 
-	var $name = 'Volunteers';
+class VolunteersController extends AppController
+{
     
-    var $paginate = array(
+    public $paginate = array(
         'order' => 'Volunteer.id DESC',
         'limit' => 10,
         'contain' => array('Street')
     );
 
-	function index()
+	public function index()
     {
         $volunteers = $this->paginate();
         $streets = $this->Volunteer->Street->find('list');
@@ -17,7 +17,7 @@ class VolunteersController extends AppController {
 		$this->set(compact('volunteers', 'streets'));
 	}
 
-	function view($id = null)
+	public function view($id = null)
     {
         $this->Volunteer->id = $id;
         
@@ -30,7 +30,7 @@ class VolunteersController extends AppController {
 		$this->set('volunteer', $this->Volunteer->read());
 	}
 
-	function add()
+	public function add()
     {
 		if (!empty($this->data)) {
 			$this->Volunteer->create();
@@ -47,7 +47,7 @@ class VolunteersController extends AppController {
 		$this->set(compact('streets'));
 	}
 
-	function edit($id = null)
+	public function edit($id = null)
     {
 		$this->Volunteer->id = $id;
         
@@ -74,7 +74,7 @@ class VolunteersController extends AppController {
 		$this->set(compact('streets'));
 	}
 
-	function delete($id = null)
+	public function delete($id = null)
     {       
 		$this->Volunteer->id = $id;
         
@@ -90,6 +90,21 @@ class VolunteersController extends AppController {
 		}
         
         $this->redirect(array('action'=>'index'));
+	}
+
+	public function register()
+	{
+		$this->layout = 'bootstrap/basic';
+
+		if (!empty($this->data)) {
+			$this->Volunteer->create();
+			if ($this->Volunteer->save($this->data)) {
+				$this->Session->setFlash(__('Дані успішно збережено.', true), 'flash_done');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('Помилка збереження. Перевірте правильність введених даних.', true), 'flash_warning');
+			}
+		}
 	}
 
 }
