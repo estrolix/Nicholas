@@ -108,6 +108,8 @@ class VolunteersController extends AppController
 			}
 		}
 		$this->set('genders', $this->genders);
+		$this->set('jobdirections', ClassRegistry::init('Jobdirection')->find('list'));
+		$this->set('howfounds', ClassRegistry::init('Howfounds')->find('list'));
 	}
 
 }

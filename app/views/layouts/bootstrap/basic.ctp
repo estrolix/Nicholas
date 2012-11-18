@@ -11,7 +11,10 @@
 	<link href="/bootstrap/css/bootstrap.css" rel="stylesheet">
 	<link href="/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
 
+
 	<link href="/css/app.css" rel="stylesheet">
+
+	<?php echo $this->Html->script('jquery'); ?>
 
 	<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -46,10 +49,17 @@
 				font-size: 21px;
 				padding: 14px 24px;
 			}
+
+			.header-phones {
+				font-size: 14px;
+				font-weight: bold;
+			}
+				.header-phones span {
+					color: #08C;
+				}
+
 		</style>
 
-
-	
 	</head>
 
 	<body>
@@ -57,12 +67,13 @@
 	<div class="container-narrow">
 
 		<div class="masthead">
-		<ul class="nav nav-pills pull-right">
-			<li class="active"><a href="#">Home</a></li>
-			<li><a href="#">About</a></li>
-			<li><a href="#">Contact</a></li>
-		</ul>
-		<h3 class="muted">Миколай про тебе не забуде</h3>
+			<div class="pull-right header-phones">
+				Деталі за телефонами:<br />
+				<span>098-963-15-87</span><br />
+				<span>067-353-32-15</span>
+				</span>
+			</div>
+			<h3 class="muted">Тернопіль - 2012</h3>
 		</div>
 
 		<hr>
@@ -82,7 +93,6 @@
 	<!-- Le javascript
 	================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="/js/jquery.js"></script>
 	
 	<script src="/bootstrap/js/bootstrap-alert.js"></script>
 	<script src="/bootstrap/js/bootstrap-dropdown.js"></script>
