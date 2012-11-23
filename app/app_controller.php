@@ -5,7 +5,9 @@ class AppController extends Controller {
     public $helpers = array('Html', 'Form', 'Session', 'Javascript');
     public $components = array('RequestHandler', 'Session');
     
-    public $monthes = array(1 => 'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень', 'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень');
+    public $monthes = array(1 => 'січень', 'лютий', 'березень', 'квітень', 'травень', 'червень',
+                                'липень', 'серпень', 'вересень', 'жовтень', 'листопад', 'грудень');
+    public $genders = array('m' => 'чоловіча', 'f' => 'жіноча');
 
     public $settings = array();
     
@@ -35,7 +37,6 @@ class AppController extends Controller {
         if(empty($this->settings)) {
             $this->loadSettings();
         }
-
         return isset($this->settings[$key]) ? $this->settings[$key] : null;
     }
 

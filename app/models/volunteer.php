@@ -11,47 +11,44 @@ class Volunteer extends AppModel
 		)
 	);
 
-	public $hasOne = array('Howfound');
+	public $hasOne = array('Howfound', 'Jobdirection');
 
-	public $hasAndBelongsToMany = array(
+	/*public $hasAndBelongsToMany = array(
 		'Jobdirection' =>
 			array(
 				//'className'              => 'Jobdirection',
-				'joinTable'              => 'volunteers_jobdirections',
-				/*'foreignKey'             => 'recipe_id',
-				'associationForeignKey'  => 'tag_id',
-				'unique'                 => true,
-				'conditions'             => '',
-				'fields'                 => '',
-				'order'                  => '',
-				'limit'                  => '',
-				'offset'                 => '',
-				'finderQuery'            => '',
-				'deleteQuery'            => '',
-				'insertQuery'            => ''*/
+				'joinTable'              => 'volunteers_jobdirections'
 			)
-	);
+	);*/
 
 	public $validate = array(
 		'first_name' => array(
 			'rule' => 'notempty',
 			'required' => true,
-			'message' => 'Введіть прізвище.'                
+			'message' => 'Введіть ім\'я.'                
 		),
 		'last_name' => array(
 			'rule' => 'notempty',
-			'allowEmpty' => true,
-			'message' => 'Введіть ім\'я.'                
+			'required' => true,
+			'message' => 'Введіть прізвище'                
 		),
 		'birthday' => array(
 			'rule' => 'date',
-			'allowEmpty' => true, 
+			'allowEmpty' => false, 
 			'message' => 'Введіть коректну дату'
 		),
 		'email' => array(
 			'rule' => 'email',
 			'allowEmpty' => true, 
 			'message' => 'Введіть коректний e-mail'
+		),
+		'phone' => array(
+			'rule' => 'notempty',
+			'allowEmpty' => true,
+			'message' => 'Введіть телефон.'                
+		),
+		'gender' => array(
+			'rule' => array('inList', array('m', 'f'))
 		)
 	);
 	

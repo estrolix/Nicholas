@@ -9,8 +9,6 @@ class VolunteersController extends AppController
         'contain' => array('Street')
     );
 
-    public $genders = array('m' => 'чоловіча', 'f' => 'жіноча');
-
 	public function index()
     {
         $volunteers = $this->paginate();
@@ -110,6 +108,7 @@ class VolunteersController extends AppController
 		$this->set('genders', $this->genders);
 		$this->set('jobdirections', ClassRegistry::init('Jobdirection')->find('list'));
 		$this->set('howfounds', ClassRegistry::init('Howfounds')->find('list'));
+		$this->set('title_for_layout', 'Анкета помічника св. Миколая');
 	}
 
 }
