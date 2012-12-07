@@ -15,7 +15,7 @@
 			<th class="header <?php if($sortKey == 'Child.flat' && $sortDir == 'asc'): ?>headerSortUp<?php elseif($sortKey == 'Child.flat' && $sortDir == 'desc'): ?>headerSortDown<?php endif; ?>"><?php echo $this->Paginator->sort('Квартира', 'flat');?></th>
             <th>Телефон</th>
 			<th class="header <?php if($sortKey == 'Child.category_id' && $sortDir == 'asc'): ?>headerSortUp<?php elseif($sortKey == 'Child.category_id' && $sortDir == 'desc'): ?>headerSortDown<?php endif; ?>"><?php echo $this->Paginator->sort('Категорія', 'category_id');?></th>
-			<th class="header <?php if($sortKey == 'Child.source_id' && $sortDir == 'asc'): ?>headerSortUp<?php elseif($sortKey == 'Child.source_id' && $sortDir == 'desc'): ?>headerSortDown<?php endif; ?>"><?php echo $this->Paginator->sort('Джерело внесення', 'source_id');?></th>
+			<!--<th class="header <?php if($sortKey == 'Child.source_id' && $sortDir == 'asc'): ?>headerSortUp<?php elseif($sortKey == 'Child.source_id' && $sortDir == 'desc'): ?>headerSortDown<?php endif; ?>"><?php echo $this->Paginator->sort('Джерело внесення', 'source_id');?></th>-->
 			<th class="actions">Дії</th>
 	</tr>
 	<?php
@@ -30,7 +30,7 @@
 	?>
 	<tr<?php echo $class;?>>
 		<td><?php echo $child['Child']['id']; ?>&nbsp;</td>
-		<td><?php echo  $this->Html->link($child['Child']['first_name'] . ' ' . $child['Child']['last_name'] . ' ' . $child['Child']['third_name'], array('controller' => 'children', 'action' => 'view', $child['Child']['id'])); ?>&nbsp;</td>
+		<td><?php echo  $this->Html->link($child['Child']['first_name'] . ' ' . $child['Child']['last_name']/* . ' ' . $child['Child']['third_name']*/, array('controller' => 'children', 'action' => 'view', $child['Child']['id'])); ?>&nbsp;</td>
 		<td><?php echo $child['Child']['age']; ?>&nbsp;</td>
 		<td>
 			<?php echo $this->Html->link($child['Street']['title'], array('controller' => 'streets', 'action' => 'view', $child['Street']['id'])); ?>
@@ -39,7 +39,7 @@
 		<td><?php echo $child['Child']['private_house'] ? 'п.б.' : $child['Child']['flat']; ?>&nbsp;</td>
         <td><?php echo $child['Child']['phone']; ?>&nbsp;</td>
 		<td><?php echo $child['Category']['title']; ?></td>
-		<td><?php echo $child['Source']['title']; ?></td>
+		<!--<td><?php echo $child['Source']['title']; ?></td>-->
 		<td class="actions">
 			<?php echo $this->Html->link($this->Html->image('admin/ico-delete.gif', array('alt' => __('Видалити зі списку', true), 'title' => __('Видалити зі списку', true), 'class' => 'ico')), array('controller' => 'children', 'action' => 'moveToDeleted', $child['Child']['id']), array('escape' => false, 'class' => 'childDeleteLink')); ?>
 			<?php echo $this->Html->link($this->Html->image('admin/ico-edit.gif', array('alt' => __('Редагувати дані', true), 'title' => __('Редагувати дані', true), 'class' => 'ico')), array('controller' => 'children', 'action' => 'edit', $child['Child']['id']), array('escape' => false)); ?>

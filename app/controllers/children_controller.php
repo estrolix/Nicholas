@@ -4,7 +4,7 @@ class ChildrenController extends AppController {
 	var $name = 'Children';
     
     var $paginate = array(
-        'order' => 'Child.id DESC',
+        'order' => 'Child.id ASC',
         'limit' => 20,
         'contain' => array('Category', 'Street', 'Source'),
         'conditions' => array('is_deleted' => 0)

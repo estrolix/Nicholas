@@ -46,7 +46,7 @@
 				child = child.Child;
 
 		    	var address = "Україна, м. Тернопіль, вул. <?php echo $street['Street']['title']; ?>, " + child.house;
-			    var name = child.last_name + ' ' + child.first_name + ' ' + child.third_name;
+			    var name = child.last_name + ' ' + child.first_name + ' ' + (child.third_name ? child.third_name : '');
 			    
 			    geocoder.geocode({'address': address}, function(results, status) {
 			        if (status == google.maps.GeocoderStatus.OK) {

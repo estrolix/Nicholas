@@ -34,7 +34,7 @@ class Child extends AppModel {
 	);
 
 	var $validate = array(
-		'first_name' => array(
+		/*'first_name' => array(
             'rule' => 'notempty',
             'required' => true,
             'message' => 'Введіть прізвище.'                
@@ -48,7 +48,7 @@ class Child extends AppModel {
             'rule' => 'notempty',
             'allowEmpty' => true,
             'message' => 'Введіть по-батькові.'                
-		),
+		),*/
         'birthday' => array(
 			'rule' => 'date',
             'allowEmpty' => true, 
